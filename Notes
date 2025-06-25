@@ -21,7 +21,7 @@ Edit String Box:
 放弃此次修改 = Discard Changes
 还原该串的修改 = Revert changes
 
-Not many strings needed to be edited for this one, although there were 3 lines that were sneakily injected into the tutorial text from here, I guess that's how G-MODE decided to implement a change without modify game files, for this instance anyway.
+Not many strings needed to be edited for this one, although there were 3 lines that were sneakily injected into the tutorial text from here, I guess that's how G-MODE decided to implement a change without modifying game files, for this instance anyway.
 
 Unity assets - Edited with https://github.com/nesrak1/UABEA/releases
 StreamingAssets\prefab:
