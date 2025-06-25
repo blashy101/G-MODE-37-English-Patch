@@ -1,0 +1,35 @@
+All G-MODE Archives games will be different processes for translating but for this specific one here are the things that needed to be changed to fully translate the game in English. Games in a "series" like this one and the 3 Beach Volleyball games it spun off of all seem to be structurally similiar so a lot of the same process can be done for those games, but YMMV with other titles. Will make a writeup for any future G-MODE translation patches.
+
+Managed\Metadata\global-metadata.dat - Edited with https://github.com/JeremieCHN/MetaDataStringEditor/releases 
+
+Don't have the time/resources to fork this and recompile in English but here is a rough translation to use this:
+Top Toolbar:
+加载 = Open file
+另存为 = Save file (must create new file every time, cannot just overwrite global-metadata.dat)
+关闭文件 = Clear/remove file
+下一个 = Search
+
+Columns:
+原字符串 = Original string
+新字符串 = New string
+是否修改 = * if modified, blank otherwise
+
+Click on string -> 编辑 = Edit string
+
+Edit String Box:
+保存 = Save changes
+放弃此次修改 = Discard Changes
+还原该串的修改 = Revert changes
+
+Not many strings needed to be edited for this one, although there were 3 lines that were sneakily injected into the tutorial text from here, I guess that's how G-MODE decided to implement a change without modify game files, for this instance anyway.
+
+Unity assets - Edited with https://github.com/nesrak1/UABEA/releases
+StreamingAssets\prefab:
+appliarchive - MonoBehavior Text files needed translating to English (autosave message etc)
+howtoplay - 4 Texture2D files with controls, displayed outside of emulated game in G-MODE GUI
+setting - MonoBeahavior Text files needed translating to English (settings in G-MODE GUI, during emulated gameplay)
+title - 1 Texture2D file (G-MODE Archives logo) and 1 MonoBehavior Text file (TitleDataModel) for splash screen text (name of game/description)
+
+StreamingAssets:
+localization - standard Unity file, contains one TextAsset for G-MODE GUI
+scratchpad - Core game data/Write up when patch releases
