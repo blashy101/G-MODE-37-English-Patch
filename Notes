@@ -32,4 +32,16 @@ title - 1 Texture2D file (G-MODE Archives logo) and 1 MonoBehavior Text file (Ti
 
 StreamingAssets:
 localization - standard Unity file, contains one TextAsset for G-MODE GUI
-scratchpad - Core game data/Write up when patch releases
+scratchpad - Core game data is res.bin.
+
+res.bin:
+0x0000-0x06B6 - Table of Contents 
+-> First 16 bytes header data/raw data size (0x000A-C is the size of the file minus the size of the ToC, example: 03D2CA - 6B7 = 03CC13)
+-> 2 bytes prior to file name (09 2F for example for .gif files typically), file name, 4 bytes for file size (00 00 43 BB for example, first file in ToC)
+-> Raw data begins at 0x06B7, no breaks between raw file data so what I did was just copy each chunk of bytes out into separate files based on file size provided in ToC, there were 5/6 gif files with Japanese graphics/text on them
+-> All .txt files contained Japanese text that needed to be translated, there were no string length bytes to worry about so as long as it fit on screen, it worked fine just editing the line. All text was encoded in Shift-JIS.
+-> tutorialData.bin -> This was a zip archive (PK file header) and inside was a .dat file with the full script for the tutorial messages encoded in UTF-8
+-> tutorialData.dat: 0x0000-0x000C control bytes, at 0x000D is one byte for string length, followed by the string, and ending with 00 xx (xx = next string length), etc etc. There were no hardcoded limits for string length but I found 20-21 English characters were all that could fit per line.
+-> Packed .dat file back into tutorialData.bin with 7-Zip, and copied that bin file's raw bytes back into res.bin
+
+All modifications to res.bin were made with HxD, Hexinator (for Shift-JIS and UTF-8 encoded text viewing/editing) and GIMP for .gif images
