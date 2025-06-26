@@ -27,7 +27,7 @@ Unity assets - Edited with https://github.com/nesrak1/UABEA/releases
 StreamingAssets\prefab:
 appliarchive - MonoBehavior Text files needed translating to English (autosave message etc)
 howtoplay - 4 Texture2D files with controls, displayed outside of emulated game in G-MODE GUI
-setting - MonoBeahavior Text files needed translating to English (settings in G-MODE GUI, during emulated gameplay)
+setting - MonoBehavior Text files needed translating to English (settings in G-MODE GUI, during emulated gameplay)
 title - 1 Texture2D file (G-MODE Archives logo) and 1 MonoBehavior Text file (TitleDataModel) for splash screen text (name of game/description)
 
 StreamingAssets:
